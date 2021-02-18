@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestAll" parallel="tests" thread-count="3">
+
+    <test name="new_person_chrome_local">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="host" value="local"></parameter>
+        <parameter name="url" value="http://localhost:4444/wd/hub"></parameter>
+        <!--parameter name="loginUrl" value="https://uat-intern.impfzentren.bayern/vaccination/"></parameter-->
+        <parameter name="baseUrl" value="https://www.geizhals.at"></parameter>
+        <classes>
+            <class name="scenarios.SearchForItem"></class>
+        </classes>
+    </test>
+
+    <!--test name="new_person_firefox_local">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="host" value="local"></parameter>
+        <parameter name="url" value="http://localhost:4444/wd/hub"></parameter>
+        <parameter name="loginUrl" value="<url>>"></parameter>
+        <classes>
+            <class name="scenarios.CreateNewPerson"></class>
+        </classes>
+    </test-->
+
+
+</suite>
