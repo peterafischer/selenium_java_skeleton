@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="TestAll" parallel="tests" thread-count="3">
 
-    <test name="new_person_chrome_local">
+    <test name="beforeSuite">
         <parameter name="browser" value="chrome"></parameter>
         <parameter name="host" value="local"></parameter>
         <parameter name="url" value="http://localhost:4444/wd/hub"></parameter>
