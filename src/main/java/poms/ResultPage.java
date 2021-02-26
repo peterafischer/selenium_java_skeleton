@@ -19,7 +19,7 @@ public class ResultPage extends BasePOM {
     @FindBy(className = "results__control__sort-by-select")
     WebElement sortDropdown;
 
-    By namefieldBy = By.className("Listview__name-link");
+    By namefieldBy = By.className("listview__name-link");
     By pricetextBy = By.className("price");
 
     public ResultPage(WebDriver driver, String searchstring) {
@@ -36,9 +36,9 @@ public class ResultPage extends BasePOM {
     public Float getCheapestPrice() {
         Float cheapestpricetext = null;
         for (WebElement listelement : listview_items) {
-            if (listelement.findElement(namefieldBy).getTagName().contains(searchtext)) {
+            if (listelement.findElement(namefieldBy).getText().contains(searchtext)) {
                 String pricestring = listelement.findElement(pricetextBy).getText();
-                Float price = Float.parseFloat(pricestring.split(" ")[1]);
+                Float price = Float.parseFloat(pricestring.replace(',','.').split(" ")[1]);
                 if (cheapestpricetext == null || cheapestpricetext > price) {
                     cheapestpricetext = price;
                 }
